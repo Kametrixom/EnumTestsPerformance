@@ -18,11 +18,12 @@ extension CollectionType where Generator.Element == Int {
 }
 
 class Tests: XCTestCase {
-	let repeats = 20
+	let repeatsDefault = 20
+	let repeatsCustom = 200
 	
 	func test128Cases() {
 		// Chooses 128 random case rawValues
-		let repeatedRawValues = (0..<128).choose(128, rep: repeats).map{ rawValuesE128[$0] }
+		let repeatedRawValues = (0..<128).choose(128, rep: repeatsDefault).map{ rawValuesE128[$0] }
 		
 		measureBlock {
 			for rawValue in repeatedRawValues {
@@ -32,7 +33,7 @@ class Tests: XCTestCase {
 	}
     
 	func test256Cases() {
-		let repeatedRawValues = (0..<256).choose(128, rep: repeats).map{ rawValuesE256[$0] }
+		let repeatedRawValues = (0..<256).choose(128, rep: repeatsDefault).map{ rawValuesE256[$0] }
 
 		measureBlock {
 			for rawValue in repeatedRawValues {
@@ -42,7 +43,7 @@ class Tests: XCTestCase {
 	}
 	
 	func test512Cases() {
-		let repeatedRawValues = (0..<512).choose(128, rep: repeats).map{ rawValuesE512[$0] }
+		let repeatedRawValues = (0..<512).choose(128, rep: repeatsDefault).map{ rawValuesE512[$0] }
 
 		measureBlock {
 			for rawValue in repeatedRawValues {
@@ -52,7 +53,7 @@ class Tests: XCTestCase {
 	}
 	
 	func test1024Cases() {
-		let repeatedRawValues = (0..<1024).choose(128, rep: repeats).map{ rawValuesE1024[$0] }
+		let repeatedRawValues = (0..<1024).choose(128, rep: repeatsDefault).map{ rawValuesE1024[$0] }
 
 		measureBlock {
 			for rawValue in repeatedRawValues {
@@ -63,7 +64,7 @@ class Tests: XCTestCase {
 	
 	func test128CustomCases() {
 		// Chooses 128 random case rawValues
-		let repeatedRawValues = (0..<128).choose(128, rep: repeats).map{ C128.hashToRaw[$0] }
+		let repeatedRawValues = (0..<128).choose(128, rep: repeatsCustom).map{ C128.hashToRaw[$0] }
 		
 		measureBlock {
 			for rawValue in repeatedRawValues {
@@ -73,7 +74,7 @@ class Tests: XCTestCase {
 	}
 	
 	func test256CustomCases() {
-		let repeatedRawValues = (0..<256).choose(128, rep: repeats).map{ C256.hashToRaw[$0] }
+		let repeatedRawValues = (0..<256).choose(128, rep: repeatsCustom).map{ C256.hashToRaw[$0] }
 		
 		measureBlock {
 			for rawValue in repeatedRawValues {
@@ -83,7 +84,7 @@ class Tests: XCTestCase {
 	}
 	
 	func test512CustomCases() {
-		let repeatedRawValues = (0..<512).choose(128, rep: repeats).map{ C512.hashToRaw[$0] }
+		let repeatedRawValues = (0..<512).choose(128, rep: repeatsCustom).map{ C512.hashToRaw[$0] }
 		
 		measureBlock {
 			for rawValue in repeatedRawValues {
@@ -93,7 +94,7 @@ class Tests: XCTestCase {
 	}
 	
 	func test1024CustomCases() {
-		let repeatedRawValues = (0..<1024).choose(128, rep: repeats).map{ C1024.hashToRaw[$0] }
+		let repeatedRawValues = (0..<1024).choose(128, rep: repeatsCustom).map{ C1024.hashToRaw[$0] }
 		
 		measureBlock {
 			for rawValue in repeatedRawValues {
