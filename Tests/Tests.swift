@@ -61,4 +61,45 @@ class Tests: XCTestCase {
 		}
 	}
 	
+	func test128CustomCases() {
+		// Chooses 128 random case rawValues
+		let repeatedRawValues = (0..<128).choose(128, rep: repeats).map{ C128.hashToRaw[$0] }
+		
+		measureBlock {
+			for rawValue in repeatedRawValues {
+				_ = C128(rawValue: rawValue)
+			}
+		}
+	}
+	
+	func test256CustomCases() {
+		let repeatedRawValues = (0..<256).choose(128, rep: repeats).map{ C256.hashToRaw[$0] }
+		
+		measureBlock {
+			for rawValue in repeatedRawValues {
+				_ = C256(rawValue: rawValue)
+			}
+		}
+	}
+	
+	func test512CustomCases() {
+		let repeatedRawValues = (0..<512).choose(128, rep: repeats).map{ C512.hashToRaw[$0] }
+		
+		measureBlock {
+			for rawValue in repeatedRawValues {
+				_ = C512(rawValue: rawValue)
+			}
+		}
+	}
+	
+	func test1024CustomCases() {
+		let repeatedRawValues = (0..<1024).choose(128, rep: repeats).map{ C1024.hashToRaw[$0] }
+		
+		measureBlock {
+			for rawValue in repeatedRawValues {
+				_ = C1024(rawValue: rawValue)
+			}
+		}
+	}
+	
 }
