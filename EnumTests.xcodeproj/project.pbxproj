@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AF6F1E971B9C3AF600260C65 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F1E961B9C3AF600260C65 /* main.swift */; };
+		AF6F1E9E1B9C3C5800260C65 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F1E9D1B9C3C5800260C65 /* Enum.swift */; settings = {ASSET_TAGS = (); }; };
+		AF6F1EA61B9C3E5800260C65 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F1EA51B9C3E5800260C65 /* Tests.swift */; };
+		AF6F1EAB1B9C3E5F00260C65 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF6F1E9D1B9C3C5800260C65 /* Enum.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +28,21 @@
 /* Begin PBXFileReference section */
 		AF6F1E931B9C3AF600260C65 /* EnumTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = EnumTests; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF6F1E961B9C3AF600260C65 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		AF6F1E9D1B9C3C5800260C65 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		AF6F1EA31B9C3E5800260C65 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF6F1EA51B9C3E5800260C65 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		AF6F1EA71B9C3E5800260C65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AF6F1E901B9C3AF600260C65 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF6F1EA01B9C3E5800260C65 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				AF6F1E951B9C3AF600260C65 /* EnumTests */,
+				AF6F1EA41B9C3E5800260C65 /* Tests */,
 				AF6F1E941B9C3AF600260C65 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				AF6F1E931B9C3AF600260C65 /* EnumTests */,
+				AF6F1EA31B9C3E5800260C65 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +74,18 @@
 			isa = PBXGroup;
 			children = (
 				AF6F1E961B9C3AF600260C65 /* main.swift */,
+				AF6F1E9D1B9C3C5800260C65 /* Enum.swift */,
 			);
 			path = EnumTests;
+			sourceTree = "<group>";
+		};
+		AF6F1EA41B9C3E5800260C65 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				AF6F1EA51B9C3E5800260C65 /* Tests.swift */,
+				AF6F1EA71B9C3E5800260C65 /* Info.plist */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +108,23 @@
 			productReference = AF6F1E931B9C3AF600260C65 /* EnumTests */;
 			productType = "com.apple.product-type.tool";
 		};
+		AF6F1EA21B9C3E5800260C65 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF6F1EA81B9C3E5800260C65 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				AF6F1E9F1B9C3E5800260C65 /* Sources */,
+				AF6F1EA01B9C3E5800260C65 /* Frameworks */,
+				AF6F1EA11B9C3E5800260C65 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = AF6F1EA31B9C3E5800260C65 /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +135,9 @@
 				ORGANIZATIONNAME = "Kametrixom Tikara";
 				TargetAttributes = {
 					AF6F1E921B9C3AF600260C65 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					AF6F1EA21B9C3E5800260C65 = {
 						CreatedOnToolsVersion = 7.0;
 					};
 				};
@@ -109,16 +155,37 @@
 			projectRoot = "";
 			targets = (
 				AF6F1E921B9C3AF600260C65 /* EnumTests */,
+				AF6F1EA21B9C3E5800260C65 /* Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF6F1EA11B9C3E5800260C65 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AF6F1E8F1B9C3AF600260C65 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF6F1E9E1B9C3C5800260C65 /* Enum.swift in Sources */,
 				AF6F1E971B9C3AF600260C65 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF6F1E9F1B9C3E5800260C65 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF6F1EAB1B9C3E5F00260C65 /* Enum.swift in Sources */,
+				AF6F1EA61B9C3E5800260C65 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +284,28 @@
 			};
 			name = Release;
 		};
+		AF6F1EA91B9C3E5800260C65 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kametrixom.tikara.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AF6F1EAA1B9C3E5800260C65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kametrixom.tikara.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -234,6 +323,14 @@
 			buildConfigurations = (
 				AF6F1E9B1B9C3AF600260C65 /* Debug */,
 				AF6F1E9C1B9C3AF600260C65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		AF6F1EA81B9C3E5800260C65 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF6F1EA91B9C3E5800260C65 /* Debug */,
+				AF6F1EAA1B9C3E5800260C65 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
