@@ -102,5 +102,55 @@ class Tests: XCTestCase {
 			}
 		}
 	}
+    
+    
+    func test128Comparison() {
+        let a = (0..<128).choose(128, rep: 10000).map{ rawValuesE128[$0] }
+        let b = (0..<128).choose(128, rep: 10000).map{ rawValuesE128[$0] }
+        
+        measureBlock {
+            for (a, b) in zip(a, b) {
+                let x = a == b
+                let _ = x
+            }
+        }
+    }
+    
+    func test256Comparison() {
+        let a = (0..<256).choose(128, rep: 10000).map{ rawValuesE256[$0] }
+        let b = (0..<256).choose(128, rep: 10000).map{ rawValuesE256[$0] }
+        
+        measureBlock {
+            for (a, b) in zip(a, b) {
+                let x = a == b
+                let _ = x
+            }
+        }
+    }
+    
+    func test512Comparison() {
+        let a = (0..<512).choose(128, rep: 10000).map{ rawValuesE512[$0] }
+        let b = (0..<512).choose(128, rep: 10000).map{ rawValuesE512[$0] }
+        
+        measureBlock {
+            for (a, b) in zip(a, b) {
+                let x = a == b
+                let _ = x
+            }
+        }
+    }
+    
+    func test1024Comparison() {
+        let a = (0..<1024).choose(128, rep: 10000).map{ rawValuesE1024[$0] }
+        let b = (0..<1024).choose(128, rep: 10000).map{ rawValuesE1024[$0] }
+        
+        measureBlock {
+            for (a, b) in zip(a, b) {
+                let x = a == b
+                let _ = x
+            }
+        }
+    }
+
 	
 }
